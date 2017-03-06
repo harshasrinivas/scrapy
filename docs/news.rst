@@ -3,6 +3,61 @@
 Release notes
 =============
 
+Scrapy 1.4.0 (2017-XX-XX)
+-------------------------
+
+New Features
+~~~~~~~~~~~~
+
+- Use credentials from request.meta['proxy'] #2530
+- [httpcompression] add support for br - brotli content encoding #2535
+- Enable memusage extension by default. #2539
+- response.follow #2540
+- add flags to request #2082
+- Support Anonymous FTP #2343
+- HttpErrorMiddleware stats #2566
+- Retry stats #2543
+- Set canonicalize=False for LinkExtractor #2537
+- Referrer policies in RefererMiddleware #2306
+- Fix referrer policy from response headers and support explicit empty string #2627
+- data URI download handler. #2334
+
+
+Bug fixes
+~~~~~~~~~
+
+- LinkExtractors: strip whitespaces #2547
+- FormRequest: handle whitespaces in action attribute properly #2548
+- Buffer CONNECT response bytes from proxy until all HTTP headers are received #2495
+- Fix FTP downloader and re-enable FTP tests on Python 3 #2599
+- Handle data loss gracefully. #2590
+
+
+Cleanups
+~~~~~~~~
+
+- TST remove temp files and folders #2570
+- TST fixed ProjectUtilsTest on OS X #2569
+- Separate building request from _requests_to_follow in CrawlSpider #2562
+- remove “Python 3 progress” badge #2567
+- add a couple more lines to gitignore #2557
+- deprecate Spider.make_requests_from_url. #1728
+- Remove bumpversion prerelease configuration #2159
+- Set context factory implementation based on Twisted version #2577
+- Add omitted "self" arguments #2595
+- Remove redundant slot.add_request() call in ExecutionEngine #2617
+
+Documentation
+~~~~~~~~~~~~~
+
+- Doc: binary mode is required for exporters #2564
+- document issue with FormRequest.from_response due to bug in lxml #2572
+- Use single quotes uniformly #2596
+- Document ftp_user and ftp_password meta keys #2587
+- Update release notes for 1.0.7, 1.1.4 and 1.2.3 #2625
+- DOC Mention brotli support in HttpCompressionMiddleware section #2628
+
+
 Scrapy 1.3.2 (2017-02-13)
 -------------------------
 
